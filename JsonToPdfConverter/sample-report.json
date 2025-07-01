@@ -1,0 +1,357 @@
+{
+  "Id": 1,
+  "Header": [
+    {
+      "Renderer": "Row",
+      "DataSource": null,
+      "Options": {
+        "ColumnWidths": [3, 1],
+        "Components": [
+          {
+            "Renderer": "Title",
+            "DataSource": "reportTitle",
+            "Options": {
+              "FontSize": 28,
+              "Bold": true,
+              "Color": "#4287f5"
+            }
+          },
+          {
+            "Renderer": "Image",
+            "DataSource": "companyLogo",
+            "Options": {
+              "Width": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20, "ShowLine": true }
+    }
+  ],
+  "Layout": [
+    {
+      "Renderer": "Title",
+      "DataSource": "companyName",
+      "Options": {
+        "FontSize": 18,
+        "Bold": true,
+        "Color": "#2c3e50"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 15 }
+    },
+    {
+      "Renderer": "Paragraph",
+      "DataSource": "summary",
+      "Options": {
+        "FontSize": 12,
+        "Color": "#34495e"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Executive Summary",
+        "FontSize": 16,
+        "Bold": true,
+        "Color": "#e74c3c"
+      }
+    },
+    {
+      "Renderer": "Paragraph",
+      "DataSource": "executiveSummary",
+      "Options": {
+        "FontSize": 11,
+        "Color": "#2c3e50"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 15 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Market Analysis",
+        "FontSize": 16,
+        "Bold": true,
+        "Color": "#e74c3c"
+      }
+    },
+    {
+      "Renderer": "Paragraph",
+      "DataSource": "marketAnalysis",
+      "Options": {
+        "FontSize": 11,
+        "Color": "#2c3e50"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 15 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Financial Highlights",
+        "FontSize": 16,
+        "Bold": true,
+        "Color": "#e74c3c"
+      }
+    },
+    {
+      "Renderer": "Paragraph",
+      "DataSource": "financialHighlights",
+      "Options": {
+        "FontSize": 11,
+        "Color": "#2c3e50"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Row",
+      "DataSource": null,
+      "Options": {
+        "ColumnWidths": [1, 1],
+        "Components": [
+          {
+            "Renderer": "Title",
+            "DataSource": null,
+            "Options": {
+              "Text": "Product Features",
+              "FontSize": 14,
+              "Bold": true,
+              "Color": "#27ae60"
+            }
+          },
+          {
+            "Renderer": "Title",
+            "DataSource": null,
+            "Options": {
+              "Text": "Technical Achievements",
+              "FontSize": 14,
+              "Bold": true,
+              "Color": "#27ae60"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Renderer": "Row",
+      "DataSource": null,
+      "Options": {
+        "ColumnWidths": [1, 1],
+        "Components": [
+          {
+            "Renderer": "BulletedList",
+            "DataSource": "productFeatures",
+            "Options": {
+              "FontSize": 9,
+              "Color": "#7f8c8d"
+            }
+          },
+          {
+            "Renderer": "BulletedList",
+            "DataSource": "technicalAchievements",
+            "Options": {
+              "FontSize": 9,
+              "Color": "#7f8c8d"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Customer Success Metrics",
+        "FontSize": 14,
+        "Bold": true,
+        "Color": "#27ae60"
+      }
+    },
+    {
+      "Renderer": "BulletedList",
+      "DataSource": "customerSuccess",
+      "Options": {
+        "FontSize": 10,
+        "Color": "#34495e"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Sales Performance",
+        "FontSize": 16,
+        "Bold": true,
+        "Color": "#e74c3c"
+      }
+    },
+    {
+      "Renderer": "DataTable",
+      "DataSource": "salesActivity",
+      "Options": {
+        "Columns": [
+          {
+            "Header": "Month",
+            "Source": "Month"
+          },
+          {
+            "Header": "Revenue ($)",
+            "Source": "Revenue"
+          },
+          {
+            "Header": "Units Sold",
+            "Source": "UnitsSold"
+          }
+        ]
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "PieChart",
+      "DataSource": "salesActivity",
+      "Options": {
+        "Title": "Cool Pie Chart Haha",
+        "LabelSource": "Month",
+        "ValueSource": "Revenue"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Bar Chart - Revenue Comparison",
+        "FontSize": 16,
+        "Bold": true,
+        "Color": "#f39c12"
+      }
+    },
+    {
+      "Renderer": "BarChart",
+      "DataSource": "salesActivity",
+      "Options": {
+        "Title": "Awesome Bar Chart of Awesomeness"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Line Chart - Revenue Trend",
+        "FontSize": 16,
+        "Bold": true,
+        "Color": "#9b59b6"
+      }
+    },
+    {
+      "Renderer": "LineChart",
+      "DataSource": "salesActivity",
+      "Options": {
+        "Title": "Super Trendy Line Chart"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Chart Summary",
+        "FontSize": 14,
+        "Bold": true,
+        "Color": "#27ae60"
+      }
+    },
+    {
+      "Renderer": "Paragraph",
+      "DataSource": null,
+      "Options": {
+        "Text": "Look at all these amazing charts! Pie charts for proportions, bar charts for comparisons, and line charts for trends. Much data visualization, very business!",
+        "FontSize": 11,
+        "Color": "#2c3e50"
+      }
+    },
+    {
+      "Renderer": "Spacer",
+      "DataSource": null,
+      "Options": { "Height": 20 }
+    },
+    {
+      "Renderer": "Title",
+      "DataSource": null,
+      "Options": {
+        "Text": "Future Outlook",
+        "FontSize": 16,
+        "Bold": true,
+        "Color": "#e74c3c"
+      }
+    },
+    {
+      "Renderer": "Paragraph",
+      "DataSource": "futureOutlook",
+      "Options": {
+        "FontSize": 11,
+        "Color": "#2c3e50"
+      }
+    }
+  ],
+  "Footer": [
+    {
+      "Renderer": "PageNumber",
+      "DataSource": null,
+      "Options": { "Alignment": "center" }
+    }
+  ]
+}

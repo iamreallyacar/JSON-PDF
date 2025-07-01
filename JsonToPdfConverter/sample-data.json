@@ -1,0 +1,48 @@
+{
+  "reportTitle": "Super Amazing Report Title Goes Here",
+  "companyLogo": "logo.png",
+  "companyName": "Company Name Goes Here",
+  "summary": "This is where you put a really cool summary about your awesome business stuff and things",
+  "executiveSummary": "Wow, what an executive summary! Our company did some really neat things this quarter. We made money, sold stuff, and everyone was happy. Much business, very success!",
+  "marketAnalysis": "The market is doing market things. People want our products because they're pretty cool. Competition? What competition? We're the best!",
+  "financialHighlights": "Money went up! Revenue was like, super high. We counted lots of dollars and put them in the bank. Financial stuff happened and it was good.",
+  "productFeatures": [
+    "Feature that does cool stuff",
+    "Another feature that's even cooler",
+    "This feature will blow your mind",
+    "Revolutionary thing-a-ma-jig",
+    "Secret sauce ingredient"
+  ],
+  "technicalAchievements": [
+    "Servers didn't catch fire",
+    "Code actually worked sometimes",
+    "Built something with microservices (very fancy)",
+    "Automated the boring stuff",
+    "Added more blinking lights to the dashboard"
+  ],
+  "customerSuccess": [
+    "Customers think we're pretty neat: 99%",
+    "Would recommend to a friend: definitely maybe",
+    "Nobody ran away screaming: 100%",
+    "Response time faster than a caffeinated cheetah",
+    "Support tickets went poof like magic"
+  ],
+  "futureOutlook": "The future looks bright! We're going to do more cool stuff, make more money, and probably invent flying cars or something equally awesome.",
+  "salesActivity": [
+    {
+      "Month": "January",
+      "Revenue": 1000000,
+      "UnitsSold": 500
+    },
+    {
+      "Month": "February", 
+      "Revenue": 2000000,
+      "UnitsSold": 800
+    },
+    {
+      "Month": "March",
+      "Revenue": 3000000,
+      "UnitsSold": 1200
+    }
+  ]
+}
