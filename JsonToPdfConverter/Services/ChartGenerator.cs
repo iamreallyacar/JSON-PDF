@@ -39,10 +39,7 @@ namespace JsonToPdfConverter.Services
                 startAngle += sweepAngle;
             }
             
-            // Draw title
-            using var titleFont = new Font("Arial", 14, FontStyle.Bold);
-            using var titleBrush = new SolidBrush(Color.Black);
-            graphics.DrawString(title, titleFont, titleBrush, new PointF(50, 10));
+            // Title is handled by PDF Title component, not embedded in chart
             
             // Draw legend
             int legendY = 50;
@@ -105,10 +102,7 @@ namespace JsonToPdfConverter.Services
                     chartRect.Bottom + 5);
             }
             
-            // Draw title
-            using var titleFont = new Font("Arial", 14, FontStyle.Bold);
-            using var titleBrush = new SolidBrush(Color.Black);
-            graphics.DrawString(title, titleFont, titleBrush, new PointF(50, 10));
+            // Title is handled by PDF Title component, not embedded in chart
             
             using var stream = new MemoryStream();
             bitmap.Save(stream, ImageFormat.Png);
@@ -176,10 +170,7 @@ namespace JsonToPdfConverter.Services
                     chartRect.Bottom + 5);
             }
             
-            // Draw title
-            using var titleFont = new Font("Arial", 14, FontStyle.Bold);
-            using var titleBrush = new SolidBrush(Color.Black);
-            graphics.DrawString(title, titleFont, titleBrush, new PointF(50, 10));
+            // Title is handled by PDF Title component, not embedded in chart
             
             // Draw Y-axis labels
             using var labelFont = new Font("Arial", 8);

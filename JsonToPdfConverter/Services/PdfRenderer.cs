@@ -61,8 +61,6 @@ namespace JsonToPdfConverter.Services
 
         private void RenderComponent(Component component)
         {
-            Console.WriteLine($"Rendering component: {component.Renderer}");
-            
             switch (component.Renderer)
             {
                 case "Title":
@@ -117,6 +115,13 @@ namespace JsonToPdfConverter.Services
             {
                 var color = ColorTranslator.FromHtml(component.Options.Color);
                 font.Color = new BaseColor(color.R, color.G, color.B);
+            }
+
+            // Add spacing before chart titles to ensure better separation
+            if (text.Contains("Chart"))
+            {
+                paragraph.SpacingBefore = 10f;
+                paragraph.KeepTogether = true;
             }
 
             _document.Add(paragraph);
@@ -242,7 +247,19 @@ namespace JsonToPdfConverter.Services
             
             var image = iTextSharp.text.Image.GetInstance(chartBytes);
             image.ScalePercent(75f);
-            _document.Add(image);
+            
+            // Use a table to keep chart properly positioned
+            var table = new PdfPTable(1);
+            table.WidthPercentage = 100;
+            table.KeepTogether = true;
+            
+            var chartCell = new PdfPCell(image);
+            chartCell.Border = PdfPCell.NO_BORDER;
+            chartCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            chartCell.PaddingTop = 10f;
+            table.AddCell(chartCell);
+            
+            _document.Add(table);
         }
 
         private void RenderBarChart(Component component)
@@ -254,12 +271,23 @@ namespace JsonToPdfConverter.Services
                 return;
 
             string title = component.Options.Title ?? "Bar Chart";
-
             var chartBytes = _chartGenerator.GenerateBarChart(chartData, title);
             
             var image = iTextSharp.text.Image.GetInstance(chartBytes);
             image.ScalePercent(75f);
-            _document.Add(image);
+            
+            // Use a table to keep chart properly positioned
+            var table = new PdfPTable(1);
+            table.WidthPercentage = 100;
+            table.KeepTogether = true;
+            
+            var chartCell = new PdfPCell(image);
+            chartCell.Border = PdfPCell.NO_BORDER;
+            chartCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            chartCell.PaddingTop = 10f;
+            table.AddCell(chartCell);
+            
+            _document.Add(table);
         }
 
         private void RenderLineChart(Component component)
@@ -271,12 +299,23 @@ namespace JsonToPdfConverter.Services
                 return;
 
             string title = component.Options.Title ?? "Line Chart";
-
             var chartBytes = _chartGenerator.GenerateLineChart(chartData, title);
             
             var image = iTextSharp.text.Image.GetInstance(chartBytes);
             image.ScalePercent(75f);
-            _document.Add(image);
+            
+            // Use a table to keep chart properly positioned
+            var table = new PdfPTable(1);
+            table.WidthPercentage = 100;
+            table.KeepTogether = true;
+            
+            var chartCell = new PdfPCell(image);
+            chartCell.Border = PdfPCell.NO_BORDER;
+            chartCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            chartCell.PaddingTop = 10f;
+            table.AddCell(chartCell);
+            
+            _document.Add(table);
         }
 
         private void RenderImage(Component component)
